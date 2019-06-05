@@ -12,8 +12,20 @@ t = np.linspace(0,tfinal, numPoint)
 
 
 # 2d circular trajectory
-omega0 = np.pi/30
+omega0 = np.pi/30   # angular velocity    [rad/s]
+r = 0.5             # radius of trajecoty [m]
 theta = omega0*t
+X = r*np.cos(t)
+Y = r*np.sin(t)
+Z = np.zeros(len(t))
+
+# Data for a three-dimensional line
+fig2 = plt.figure(2)
+ax = plt.axes(projection='3d')
+ax.plot3D(X, Y, Z, 'gray')
+plt.show()
+
+
 
 # 2d figure 8 trajectory
 x = np.zeros(len(t))
